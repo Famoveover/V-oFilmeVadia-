@@ -1,0 +1,217 @@
+/* Importando fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap');
+
+/* ---------------------------------
+   Variáveis de Cor (CSS Variables)
+   ---------------------------------
+   Usar variáveis torna a manutenção do esquema de cores muito mais fácil.
+   Se quiser mudar o tom de amarelo do site, por exemplo, só precisa mudar em um lugar.
+*/
+:root {
+    --cor-fundo: #14181c;          /* Um preto quase total para o fundo */
+    --cor-superficie: #1f2833;    /* Um cinza escuro para cards e elementos de superfície */
+    --cor-borda: #45a29e;         /* Um ciano/verde para bordas e detalhes */
+    --cor-primaria: #fca311;      /* Um amarelo/laranja vibrante para botões e destaques */
+    --cor-texto-principal: #e5e5e5; /* Um branco suave para o texto principal */
+    --cor-texto-secundario: #a9a9a9; /* Alterado para um cinza mais claro para maior contraste */
+
+    --fonte-titulo: 'Montserrat', sans-serif;
+    --fonte-corpo: 'Roboto', sans-serif;
+}
+
+/* ---------------------------------
+   Estilos Globais e do Body
+   ---------------------------------
+*/
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto-principal);
+    font-family: var(--fonte-corpo);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--fonte-titulo);
+}
+
+a {
+    color: var(--cor-primaria);
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+    color: #ffbe5b; /* Um tom mais claro do primário para o hover */
+}
+
+/* ---------------------------------
+   Estilos para o Bootstrap e Classes de Texto
+   ---------------------------------
+*/
+.text-muted {
+    color: var(--cor-texto-secundario) !important; /* Força o uso da nossa cor para garantir legibilidade */
+}
+
+.btn-outline-light {
+    color: var(--cor-texto-principal) !important;
+    border-color: var(--cor-texto-principal) !important;
+}
+
+.btn-outline-light:hover {
+    color: var(--cor-fundo) !important;
+    background-color: var(--cor-texto-principal) !important;
+}
+
+/* ---------------------------------
+   Estilos do Cabeçalho (Header)
+   ---------------------------------
+*/
+header.bg-dark {
+    background-color: var(--cor-superficie) !important; /* !important para sobrepor o Bootstrap */
+    border-bottom: 1px solid var(--cor-borda) !important;
+}
+
+header h1 {
+    color: var(--cor-primaria);
+}
+
+/* ---------------------------------
+   Estilos dos Cards de Filme
+   ---------------------------------
+*/
+.card {
+    background-color: var(--cor-superficie);
+    border: 1px solid rgba(69, 162, 158, 0.2); /* Borda sutil usando a cor de detalhe */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Efeito de "levantar" o card */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+.card .card-title {
+    color: var(--cor-texto-principal);
+}
+
+.card .card-text {
+    color: var(--cor-texto-secundario);
+}
+
+/* ---------------------------------
+   Estilos das Seções e Títulos
+   ---------------------------------
+*/
+h2.border-bottom {
+    border-bottom-color: var(--cor-borda) !important;
+    padding-bottom: 0.5rem;
+    color: var(--cor-borda);
+}
+
+.bg-body-secondary {
+    background-color: var(--cor-superficie) !important;
+    border: 1px solid var(--cor-borda);
+}
+
+.text-body-emphasis {
+    color: var(--cor-texto-principal) !important;
+}
+
+/* ---------------------------------
+   Estilos da Lista de Comentários
+   ---------------------------------
+*/
+.list-group-item {
+    background-color: var(--cor-superficie);
+    border-color: rgba(69, 162, 158, 0.2);
+    color: var(--cor-texto-principal);
+}
+
+.list-group-item-action:hover, .list-group-item-action:focus {
+    background-color: #2a3a4a; /* Um pouco mais claro no hover */
+    color: var(--cor-texto-principal);
+}
+
+.list-group-item h6 {
+    color: var(--cor-primaria);
+}
+
+.list-group-item p, .list-group-item small {
+    color: var(--cor-texto-secundario);
+}
+
+/* ---------------------------------
+   Estilos do Rodapé (Footer)
+   ---------------------------------
+*/
+footer {
+    border-top: 1px solid var(--cor-borda);
+}
+
+footer .text-muted {
+    color: var(--cor-texto-secundario) !important;
+}
+
+/* ---------------------------------
+   Responsividade: Ajustes para Telas Pequenas
+   ---------------------------------
+   Isso garante que o layout e as fontes se ajustem bem em celulares.
+*/
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .display-4 {
+        font-size: 2.5rem;
+    }
+}
+
+/* ---------------------------------
+   Estilos da Página de Login
+   ---------------------------------
+*/
+
+.card-login {
+    background-color: var(--cor-superficie);
+    color: var(--cor-texto-principal);
+    border: 1px solid var(--cor-borda);
+}
+
+.card-login .nav-pills .nav-link {
+    color: var(--cor-texto-secundario);
+}
+
+.card-login .nav-pills .nav-link.active,
+.card-login .nav-pills .nav-link:hover {
+    background-color: var(--cor-borda);
+    color: var(--cor-texto-principal);
+}
+
+.form-dark .form-control {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto-principal);
+    border-color: var(--cor-borda);
+}
+
+.form-dark .form-control:focus {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto-principal);
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 0.25rem rgba(252, 163, 17, 0.25);
+}
+
+.form-dark .form-floating>label {
+    color: var(--cor-texto-secundario);
+}
+
+.form-dark .form-control::placeholder {
+    color: var(--cor-texto-secundario);
+}
+
+.form-dark .form-control:not(:placeholder-shown)~label {
+    color: var(--cor-primaria);
+}
