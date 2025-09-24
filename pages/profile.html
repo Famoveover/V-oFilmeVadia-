@@ -16,10 +16,8 @@
                 <a href="../index.html" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
                     <h1 class="fs-4">Vê o filme, Vadia!</h1>
                 </a>
-
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    </ul>
-
+                </ul>
                 <div class="text-end">
                     <a href="./login.html" class="btn btn-outline-light me-2">Login</a>
                     <a href="./profile.html" class="btn btn-warning">Meu Perfil</a>
@@ -69,40 +67,40 @@
                 <button type="button" class="btn btn-secondary" id="cancelBioButton">Cancelar</button>
             </form>
         </section>
+        
+        <section class="mb-5">
+    <h2 class="pb-2 border-bottom">Adicionar um Filme Assistido</h2>
+    <form id="addMovieForm" class="mt-4">
+        <div class="mb-3">
+            <label for="movieTitleSelect" class="form-label text-white">Selecione o Filme</label>
+            <select class="form-select" id="movieTitleSelect" required>
+                <option value="">Selecione um filme...</option>
+                </select>
+        </div>
+        <div class="mb-3">
+            <label for="movieRatingInput" class="form-label text-white">Sua Avaliação (1-5)</label>
+            <input type="number" class="form-control" id="movieRatingInput" min="1" max="5" required>
+        </div>
+        <div class="mb-3">
+            <label for="movieCommentInput" class="form-label text-white">Seu Comentário</label>
+            <textarea class="form-control" id="movieCommentInput" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-warning w-100 py-2">Adicionar Filme</button>
+    </form>
+</section>
 
         <section class="mb-5">
             <h2 class="pb-2 border-bottom">Filmes Assistidos</h2>
             
-            <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
-                <div class="col d-flex align-items-start">
-                    <div class="card shadow-sm w-100">
-                        <img src="https://via.placeholder.com/300x450.png?text=Pôster+do+Filme" class="card-img-top" alt="Pôster do Filme">
-                        <div class="card-body">
-                            <h5 class="card-title">Nome do Filme Assistido</h5>
-                            <div class="d-flex justify-content-between align-items-center mt-3">
-                                <a href="./movie.html" class="btn btn-sm btn-outline-secondary">Ver Detalhes</a>
-                                <small class="text-muted">Sua Avaliação: ⭐ 5/5</small>
-                            </div>
-                        </div>
-                    </div>
+            <div id="moviesList" class="row g-4 py-5 row-cols-1 row-cols-lg-3">
                 </div>
-            </div>
         </section>
 
         <section>
             <h2 class="pb-2 border-bottom">Minhas Avaliações</h2>
             
-            <div class="list-group w-auto mt-4">
-                <a href="./movie.html" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-                  <div class="d-flex gap-2 w-100 justify-content-between">
-                    <div>
-                      <h6 class="mb-0">Comentário sobre o Filme Assistido</h6>
-                      <p class="mb-0 opacity-75">"O filme me fez rir e chorar. Incrível!"</p>
-                    </div>
-                    <small class="opacity-50 text-nowrap">há 2 dias</small>
-                  </div>
-                </a>
-            </div>
+            <div id="ratingsList" class="list-group w-auto mt-4">
+                </div>
         </section>
 
     </main>
@@ -111,4 +109,7 @@
         <p class="text-center text-muted">© 2025 Vê o filme, Vadia!</p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="../js/profile.js"></script>
+</body>
+</html>
