@@ -10,5 +10,35 @@
     "title": "Coherence",
     "posterUrl": "https://br.web.img3.acsta.net/pictures/14/04/17/16/57/109988.jpg",
     "description": "Coisas estranhas começam a acontecer quando um grupo de amigos se reúne para um jantar e um cometa passa por cima."
+  },
+  {
+    "id": 3,
+    "title": "Ilha do Medo",
+    "posterUrl": "https://cdn.culturagenial.com/imagens/ilha-do-medo-cartaz-cke.jpg?class=article",
+    "description": "Em 1954, um policial federal dos Estados Unidos investiga o desaparecimento de um assassino que escapou de um hospital psiquiátrico."
+  },
+  {
+    "id": 4,
+    "title": "Até a ultima gota",
+    "posterUrl": "https://www.imdb.com/pt/title/tt32550101/mediaviewer/rm2490795778/?ref_=tt_ov_i",
+    "description": "Até onde ela vai aguentar? Após um dia devastador, uma mãe solo dedicada chega ao seu limite e comete um ato de desespero que ninguém poderia prever."
+  },
+  {
+    "id": 5,
+    "title": "Nós",
+    "posterUrl": "https://www.imdb.com/pt/title/tt6857112/mediaviewer/rm3131874049/?ref_=tt_ov_i",
+    "description": "As serenas férias de praia de uma família transformam-se em caos quando os seus duplos aparecem e começam a aterrorizá-los."
+  },
+  {
+    "id": 6,
+    "title": "A mulher Rei",
+    "posterUrl": "https://br.web.img3.acsta.net/pictures/14/04/17/16/57/109988.jpg",
+    "description": "Um épico histórico inspirado nos fatos que aconteceram no Reino do Daomé, um dos estados mais poderosos da África nos séculos XVIII e XIX."
+  },
+  {
+    "id": 7,
+    "title": "Incêndios",
+    "posterUrl": "https://www.imdb.com/pt/title/tt1255953/mediaviewer/rm315002881/?ref_=tt_ov_i",
+    "description": "Os gêmeos viajam para o Oriente Médio para descobrir sua história familiar e cumprir os últimos desejos de sua mãe."
   }
 ]
