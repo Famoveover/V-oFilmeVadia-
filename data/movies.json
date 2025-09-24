@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "title": "Midsommar - O Mal Não Espera a Noite",
+    "posterUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/4/47/Midsommar_%282019_film_poster%29.png/250px-Midsommar_%282019_film_poster%29.png"
+  },
+  {
+    "id": 2,
+    "title": "Pulp Fiction: Tempo de Violência",
+    "posterUrl": "https://m.media-amazon.com/images/M/MV5BMTM3N2FlNWYtOGJkNC00YTJjLTliMmEtNDgxYzFlMTU1NjE2XkEyXkFqcGdeQXVyOTc5MDI5NjE@._V1_FMjpg_UX1000_.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Forrest Gump: O Contador de Histórias",
+    "posterUrl": "https://m.media-amazon.com/images/M/MV5BNzhiNDUwYjktNGRkOS00MTU5LWIwZTQtOWQ5ZDU2Y2FiOTNmXkEyXkFqcGdeQXVyMTExODQ0Nw@@._V1_.jpg"
+  },
+  {
+    "id": 4,
+    "title": "A Viagem de Chihiro",
+    "posterUrl": "https://m.media-amazon.com/images/M/MV5BMjE3NTk1NDYxMF5BMl5BanBnXkFtZTcwMjgwMzA5Mg@@._V1_.jpg"
+  }
+]
