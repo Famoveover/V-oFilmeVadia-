@@ -2,21 +2,13 @@
   {
     "id": 1,
     "title": "Midsommar - O Mal Não Espera a Noite",
-    "posterUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/4/47/Midsommar_%282019_film_poster%29.png/250px-Midsommar_%282019_film_poster%29.png"
+    "posterUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/4/47/Midsommar_%282019_film_poster%29.png/250px-Midsommar_%282019_film_poster%29.png",
+    "description": "Midsommar é um filme de terror folk de 2019, dirigido por Ari Aster, sobre um grupo de americanos que viaja para um festival pagão na Suécia e se depara com rituais bizarros e violentos de um culto rural. O filme acompanha Dani, que, após uma tragédia pessoal, viaja com o namorado para o vilarejo sueco de Hårga, onde o festival do Solstício de Verão se revela um pesadelo ao se aprofundarem nas tradições da comunidade, que envolvem sacrifícios e manipulação psicológica."
   },
   {
     "id": 2,
-    "title": "Pulp Fiction: Tempo de Violência",
-    "posterUrl": "https://m.media-amazon.com/images/M/MV5BMTM3N2FlNWYtOGJkNC00YTJjLTliMmEtNDgxYzFlMTU1NjE2XkEyXkFqcGdeQXVyOTc5MDI5NjE@._V1_FMjpg_UX1000_.jpg"
-  },
-  {
-    "id": 3,
-    "title": "Forrest Gump: O Contador de Histórias",
-    "posterUrl": "https://m.media-amazon.com/images/M/MV5BNzhiNDUwYjktNGRkOS00MTU5LWIwZTQtOWQ5ZDU2Y2FiOTNmXkEyXkFqcGdeQXVyMTExODQ0Nw@@._V1_.jpg"
-  },
-  {
-    "id": 4,
-    "title": "A Viagem de Chihiro",
-    "posterUrl": "https://m.media-amazon.com/images/M/MV5BMjE3NTk1NDYxMF5BMl5BanBnXkFtZTcwMjgwMzA5Mg@@._V1_.jpg"
+    "title": "Coherence",
+    "posterUrl": "https://br.web.img3.acsta.net/pictures/14/04/17/16/57/109988.jpg",
+    "description": "Coisas estranhas começam a acontecer quando um grupo de amigos se reúne para um jantar e um cometa passa por cima."
   }
 ]
