@@ -121,7 +121,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const selectedMovie = availableMovies.find(movie => movie.id === selectedMovieId);
 
             if (selectedMovie) {
-                // Checa se o filme já foi adicionado
                 const movieAlreadyAdded = userProfile.moviesWatched.some(movie => movie.id === selectedMovieId);
                 if (movieAlreadyAdded) {
                     alert('Este filme já foi adicionado. Por favor, edite a avaliação existente ou escolha outro filme.');
@@ -136,7 +135,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     comment: movieComment
                 };
 
-                // Adiciona o novo filme/avaliação ao perfil
                 if (!userProfile.moviesWatched) userProfile.moviesWatched = [];
                 userProfile.moviesWatched.push(newMovie);
 
@@ -148,10 +146,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     comment: movieComment
                 });
 
-                // Salva o perfil atualizado
                 localStorage.setItem('currentUser', JSON.stringify(userProfile));
 
-                // Limpa o formulário e recarrega as listas
                 addMovieForm.reset();
                 renderMovies();
                 renderRatings();
@@ -217,3 +213,4 @@ document.addEventListener('DOMContentLoaded', () => {
         location.reload();
     });
 });
+
