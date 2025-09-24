@@ -37,6 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const response = await fetch('../data/movies.json');
             availableMovies = await response.json();
             populateMovieSelect();
+            renderMovies();
+            renderRatings();
         } catch (error) {
             console.error('Erro ao carregar os filmes:', error);
         }
@@ -44,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Função para preencher o menu suspenso de filmes
     const populateMovieSelect = () => {
+        movieTitleSelect.innerHTML = '';
         availableMovies.forEach(movie => {
             const option = document.createElement('option');
             option.value = movie.id;
@@ -57,6 +60,10 @@ document.addEventListener('DOMContentLoaded', () => {
         moviesList.innerHTML = '';
         if (userProfile.moviesWatched && userProfile.moviesWatched.length > 0) {
             userProfile.moviesWatched.forEach(movie => {
+                // Encontra a avaliação mais recente do filme no perfil do usuário
+                const latestRating = userProfile.ratings.find(r => r.id === movie.id);
+                const ratingText = latestRating ? `Sua Avaliação: ⭐ ${latestRating.rating}/5` : 'Não Avaliado';
+
                 const movieCard = document.createElement('div');
                 movieCard.classList.add('col', 'd-flex', 'align-items-start');
                 movieCard.innerHTML = `
@@ -66,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <h5 class="card-title">${movie.title}</h5>
                             <div class="d-flex justify-content-between align-items-center mt-3">
                                 <a href="./movie.html?id=${movie.id}" class="btn btn-sm btn-outline-secondary">Ver Detalhes</a>
-                                <small class="text-muted">Sua Avaliação: ⭐ ${movie.rating}/5</small>
+                                <small class="text-muted">${ratingText}</small>
                             </div>
                         </div>
                     </div>
@@ -105,9 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (userProfile.bio) {
         userBio.textContent = userProfile.bio;
     }
-    loadMovies(); // Carrega os filmes do JSON
-    renderMovies();
-    renderRatings();
+    loadMovies(); // Carrega os filmes do JSON e renderiza o perfil
 
     // Lógica para o formulário de filmes
     addMovieForm.addEventListener('submit', (e) => {
@@ -122,31 +127,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (selectedMovie) {
                 const movieAlreadyAdded = userProfile.moviesWatched.some(movie => movie.id === selectedMovieId);
-                if (movieAlreadyAdded) {
-                    alert('Este filme já foi adicionado. Por favor, edite a avaliação existente ou escolha outro filme.');
-                    return;
-                }
-
-                const newMovie = {
-                    id: selectedMovie.id,
-                    title: selectedMovie.title,
-                    posterUrl: selectedMovie.posterUrl,
-                    rating: movieRating,
-                    comment: movieComment
-                };
 
                 if (!userProfile.moviesWatched) userProfile.moviesWatched = [];
-                userProfile.moviesWatched.push(newMovie);
-
                 if (!userProfile.ratings) userProfile.ratings = [];
-                userProfile.ratings.push({
-                    id: selectedMovie.id,
-                    movieTitle: selectedMovie.title,
-                    rating: movieRating,
-                    comment: movieComment
-                });
+
+                if (!movieAlreadyAdded) {
+                    userProfile.moviesWatched.push({
+                        id: selectedMovie.id,
+                        title: selectedMovie.title,
+                        posterUrl: selectedMovie.posterUrl
+                    });
+                }
+                
+                const existingRatingIndex = userProfile.ratings.findIndex(r => r.id === selectedMovieId);
+                if (existingRatingIndex > -1) {
+                    userProfile.ratings[existingRatingIndex].rating = movieRating;
+                    userProfile.ratings[existingRatingIndex].comment = movieComment;
+                } else {
+                    userProfile.ratings.push({
+                        id: selectedMovie.id,
+                        movieTitle: selectedMovie.title,
+                        rating: movieRating,
+                        comment: movieComment
+                    });
+                }
 
                 localStorage.setItem('currentUser', JSON.stringify(userProfile));
+
+                const allUsersString = localStorage.getItem('allUsers');
+                let allUsers = allUsersString ? JSON.parse(allUsersString) : [];
+                const userIndex = allUsers.findIndex(user => user.username === userProfile.username);
+                if (userIndex > -1) {
+                    allUsers[userIndex] = userProfile;
+                } else {
+                    allUsers.push(userProfile);
+                }
+                localStorage.setItem('allUsers', JSON.stringify(allUsers));
 
                 addMovieForm.reset();
                 renderMovies();
@@ -213,4 +229,3 @@ document.addEventListener('DOMContentLoaded', () => {
         location.reload();
     });
 });
-
