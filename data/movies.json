@@ -3,42 +3,56 @@
     "id": 1,
     "title": "Midsommar - O Mal Não Espera a Noite",
     "posterUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/4/47/Midsommar_%282019_film_poster%29.png/250px-Midsommar_%282019_film_poster%29.png",
-    "description": "Midsommar é um filme de terror folk de 2019, dirigido por Ari Aster, sobre um grupo de americanos que viaja para um festival pagão na Suécia e se depara com rituais bizarros e violentos de um culto rural. O filme acompanha Dani, que, após uma tragédia pessoal, viaja com o namorado para o vilarejo sueco de Hårga, onde o festival do Solstício de Verão se revela um pesadelo ao se aprofundarem nas tradições da comunidade, que envolvem sacrifícios e manipulação psicológica."
+    "description": "Midsommar é um filme de terror folk de 2019, dirigido por Ari Aster, sobre um grupo de americanos que viaja para um festival pagão na Suécia e se depara com rituais bizarros e violentos de um culto rural. O filme acompanha Dani, que, após uma tragédia pessoal, viaja com o namorado para o vilarejo sueco de Hårga, onde o festival do Solstício de Verão se revela um pesadelo ao se aprofundarem nas tradições da comunidade, que envolvem sacrifícios e manipulação psicológica.",
+    "genre": "Drama Psicológico",
+    "director": "Ari Aster"
   },
   {
     "id": 2,
     "title": "Coherence",
     "posterUrl": "https://br.web.img3.acsta.net/pictures/14/04/17/16/57/109988.jpg",
-    "description": "Coisas estranhas começam a acontecer quando um grupo de amigos se reúne para um jantar e um cometa passa por cima."
+    "description": "Coisas estranhas começam a acontecer quando um grupo de amigos se reúne para um jantar e um cometa passa por cima.",
+    "genre": "Suspense - Mistério",
+    "director": "James Ward Byrkit"
   },
   {
     "id": 3,
     "title": "Ilha do Medo",
     "posterUrl": "https://cdn.culturagenial.com/imagens/ilha-do-medo-cartaz-cke.jpg?class=article",
-    "description": "Em 1954, um policial federal dos Estados Unidos investiga o desaparecimento de um assassino que escapou de um hospital psiquiátrico."
+    "description": "Em 1954, um policial federal dos Estados Unidos investiga o desaparecimento de um assassino que escapou de um hospital psiquiátrico.",
+    "genre": "Suspense - Mistério",
+    "director": "Martin Scorsese"
   },
   {
     "id": 4,
     "title": "Até a ultima gota",
-    "posterUrl": "https://www.imdb.com/pt/title/tt32550101/mediaviewer/rm2490795778/?ref_=tt_ov_i",
-    "description": "Até onde ela vai aguentar? Após um dia devastador, uma mãe solo dedicada chega ao seu limite e comete um ato de desespero que ninguém poderia prever."
+    "posterUrl": "data:image/jpeg;base64,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",
+    "description": "Até onde ela vai aguentar? Após um dia devastador, uma mãe solo dedicada chega ao seu limite e comete um ato de desespero que ninguém poderia prever.",
+    "genre": "Drama - Suspense",
+    "director": "Tyler Perry"
   },
   {
     "id": 5,
     "title": "Nós",
-    "posterUrl": "https://www.imdb.com/pt/title/tt6857112/mediaviewer/rm3131874049/?ref_=tt_ov_i",
-    "description": "As serenas férias de praia de uma família transformam-se em caos quando os seus duplos aparecem e começam a aterrorizá-los."
+    "posterUrl": "https://br.web.img3.acsta.net/pictures/19/02/07/14/16/5034340.jpg",
+    "description": "As serenas férias de praia de uma família transformam-se em caos quando os seus duplos aparecem e começam a aterrorizá-los.",
+    "genre": "Suspense - Mistério",
+    "director": "Jordan Peele"
   },
   {
     "id": 6,
     "title": "A mulher Rei",
-    "posterUrl": "https://br.web.img3.acsta.net/pictures/14/04/17/16/57/109988.jpg",
-    "description": "Um épico histórico inspirado nos fatos que aconteceram no Reino do Daomé, um dos estados mais poderosos da África nos séculos XVIII e XIX."
+    "posterUrl": "https://br.web.img2.acsta.net/pictures/22/09/19/20/28/5720375.jpg",
+    "description": "Um épico histórico inspirado nos fatos que aconteceram no Reino do Daomé, um dos estados mais poderosos da África nos séculos XVIII e XIX.",
+    "genre": "Ação - Drama",
+    "director": "Gina Prince-Bythewood"
   },
   {
     "id": 7,
     "title": "Incêndios",
-    "posterUrl": "https://www.imdb.com/pt/title/tt1255953/mediaviewer/rm315002881/?ref_=tt_ov_i",
-    "description": "Os gêmeos viajam para o Oriente Médio para descobrir sua história familiar e cumprir os últimos desejos de sua mãe."
+    "posterUrl": "https://br.web.img3.acsta.net/c_310_420/medias/nmedia/18/87/91/75/19962876.jpg",
+    "description": "Os gêmeos viajam para o Oriente Médio para descobrir sua história familiar e cumprir os últimos desejos de sua mãe.",
+    "genre": "Suspense",
+    "director": "Denis Villeneuve"
   }
 ]
