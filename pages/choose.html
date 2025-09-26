@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Escolha o Filme da Semana - Vê o filme, Vadia!</title>
+    <title>Escolha Semanal - Vê o filme, Vadia!</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     
@@ -17,8 +17,10 @@
                 <a href="../index.html" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
                     <h1 class="fs-4">Vê o filme, Vadia!</h1>
                 </a>
+
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                     </ul>
+
                 <div class="text-end">
                     <a href="./login.html" class="btn btn-outline-light me-2">Login</a>
                     <a href="./profile.html" class="btn btn-warning">Meu Perfil</a>
@@ -27,48 +29,39 @@
         </div>
     </header>
 
-    <main class="container my-5">
-        
-        <section class="mb-5">
-            <h2 class="pb-2 border-bottom">Vote no Filme da Semana</h2>
-            <p class="lead text-muted">A votação para o próximo filme do grupo de discussão está aberta. Escolha a sua opção favorita!</p>
+    <main class="container">
+        <h1 class="pb-2 border-bottom mb-4">Escolha Semanal do Filme</h1>
+
+        <section class="mb-5 p-4 bg-body-secondary rounded">
+            <h2 class="h4">Indicar um Novo Filme</h2>
+            <form id="nominationForm" class="mt-3">
+                <div class="mb-3">
+                    <label for="movieTitleInput" class="form-label text-white">Título do Filme</label>
+                    <input type="text" class="form-control" id="movieTitleInput" required>
+                </div>
+                <div class="mb-3">
+                    <label for="movieDirectorInput" class="form-label text-white">Diretor</label>
+                    <input type="text" class="form-control" id="movieDirectorInput" required>
+                </div>
+                <button type="submit" class="btn btn-warning w-100 py-2">Indicar para Votação</button>
+            </form>
+        </section>
+
+        <section>
+            <h2 class="pb-2 border-bottom">Filmes em Votação</h2>
             
-            <div class="row g-4 py-5 row-cols-1 row-cols-md-2 row-cols-lg-3">
-                <div class="col">
-                    <div class="card shadow-sm w-100">
-                        <img src="https://via.placeholder.com/300x450.png?text=Pôster+do+Filme+1" class="card-img-top" alt="Pôster do Filme 1">
-                        <div class="card-body">
-                            <h5 class="card-title">Nome do Filme 1</h5>
-                            <p class="card-text">Diretor: Nome do Diretor</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <button type="button" class="btn btn-warning">Votar</button>
-                                <small class="text-muted">45 votos</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm w-100">
-                        <img src="https://via.placeholder.com/300x450.png?text=Pôster+do+Filme+2" class="card-img-top" alt="Pôster do Filme 2">
-                        <div class="card-body">
-                            <h5 class="card-title">Nome do Filme 2</h5>
-                            <p class="card-text">Diretor: Nome do Diretor</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <button type="button" class="btn btn-warning">Votar</button>
-                                <small class="text-muted">32 votos</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm w-100">
-                        <img src="https://via.placeholder.com/300x450.png?text=Pôster+do+Filme+3" class="card-img-top" alt="Pôster do Filme 3">
-                        <div class="card-body">
-                            <h5 class="card-title">Nome do Filme 3</h5>
-                            <p class="card-text">Diretor: Nome do Diretor</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <button type="button" class="btn btn-warning">Votar</button>
-                                <small class="text-muted">68 votos</small>
-                            </div>
-                        </div>
-                    </div>
+            <div id="nominationList" class="list-group w-auto mt-4">
+                <p class="text-center text-secondary" id="loadingMessage">Nenhum filme indicado esta semana.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="py-3 my-4">
+        <p class="text-center text-muted">© 2025 Vê o filme, Vadia!</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="../js/choose.js"></script>
+</body>
+</html>
