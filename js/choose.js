@@ -3,9 +3,10 @@
 document.addEventListener('DOMContentLoaded', () => {
     const nominationList = document.getElementById('nominationList');
     const loadingMessage = document.getElementById('loadingMessage');
-    const nominationForm = document.getElementById('nominationForm');
+    // REMOVIDO: const nominationForm = document.getElementById('nominationForm');
     
     // Lista dos IDs que devem estar na votação semanal
+    // (Ajuste estes IDs conforme os filmes que deseja na votação!)
     const MOVIE_IDS_TO_VOTE = [3, 4, 5, 6, 7]; 
 
     // --- Funções de Gerenciamento do LocalStorage ---
@@ -32,76 +33,67 @@ document.addEventListener('DOMContentLoaded', () => {
         const nominations = MOVIE_IDS_TO_VOTE
             .map(id => {
                 const movie = allMovies.find(m => m.id === id);
-                // Retorna o filme com a contagem de votos do localStorage
-                if (movie) {
-                    return {
-                        ...movie,
-                        votes: nominationsData[id] || 0
-                    };
-                }
-                return null; // Ignora se o ID não for encontrado no movies.json
+                return {
+                    id: id,
+                    title: movie ? movie.title : `Filme Desconhecido (ID: ${id})`,
+                    posterUrl: movie ? movie.posterUrl : 'https://via.placeholder.com/150',
+                    votes: nominationsData[id] || 0
+                };
             })
-            .filter(n => n !== null);
-            
-        // 2. Ordena por votos (maior para o menor)
-        nominations.sort((a, b) => b.votes - a.votes);
-
-
+            // 2. Ordenar por número de votos (do maior para o menor)
+            .sort((a, b) => b.votes - a.votes);
+        
         if (nominations.length === 0) {
-            loadingMessage.textContent = 'Nenhum filme disponível para votação.';
-            loadingMessage.classList.remove('d-none');
+            nominationList.innerHTML = '<p class="text-center text-secondary">Nenhum filme selecionado para votação esta semana.</p>';
             return;
         }
 
-        // 3. Cria o HTML de cada item
-        nominations.forEach((movie, index) => {
-            const listItem = document.createElement('div');
-            listItem.className = 'list-group-item list-group-item-action d-flex align-items-center mb-3 p-3 bg-body-tertiary rounded';
+        // 3. Renderizar cada filme
+        nominations.forEach((nomination, index) => {
+            const listItem = document.createElement('a');
+            listItem.href = '#'; // Impedir navegação
+            listItem.classList.add('list-group-item', 'list-group-item-action', 'd-flex', 'justify-content-between', 'align-items-center', 'py-3', 'mb-2');
             
-            let rankClass = '';
-            if (index === 0) rankClass = 'bg-success-subtle border-success';
-            else if (index === 1) rankClass = 'bg-warning-subtle border-warning';
-
-            listItem.classList.add(rankClass);
+            // Adiciona classe de destaque para o filme líder
+            if (index === 0 && nomination.votes > 0) {
+                 listItem.classList.add('list-group-item-warning', 'shadow-sm');
+            }
 
             listItem.innerHTML = `
-                <img src="${movie.posterUrl}" alt="${movie.title}" class="rounded me-3" style="width: 50px; height: 75px; object-fit: cover;">
-                
-                <div class="flex-grow-1">
-                    <h5 class="mb-1 text-white">${index + 1}º - ${movie.title}</h5>
-                    <p class="mb-1 text-secondary">Votos: <strong class="text-warning">${movie.votes}</strong></p>
+                <div class="d-flex align-items-center">
+                    <img src="${nomination.posterUrl}" alt="${nomination.title}" class="rounded me-3" style="width: 50px; height: 75px; object-fit: cover;">
+                    <div>
+                        <h6 class="mb-0 fw-bold">${index + 1}. ${nomination.title}</h6>
+                    </div>
                 </div>
-
-                <a href="../pages/movie.html?id=${movie.id}" class="btn btn-outline-warning btn-sm me-2">Detalhes</a>
-                <button type="button" class="btn btn-primary vote-btn" data-movie-id="${movie.id}">
-                    Votar
-                </button>
+                <span class="badge text-bg-primary rounded-pill fs-5">${nomination.votes} Votos</span>
             `;
+            
+            // 4. Adicionar o Listener para o VOTO
+            listItem.addEventListener('click', (e) => {
+                e.preventDefault();
+                handleVote(nomination.id);
+            });
+
             nominationList.appendChild(listItem);
         });
-
-        // 4. Adiciona evento de voto aos botões
-        nominationList.querySelectorAll('.vote-btn').forEach(button => {
-            button.addEventListener('click', handleVote);
-        });
     };
 
-    // Função que lida com o clique no botão Votar
-    const handleVote = (e) => {
-        const movieId = parseInt(e.target.getAttribute('data-movie-id'), 10);
+    // Função para lidar com o voto
+    const handleVote = (movieId) => {
+        let nominationsData = getLocalNominations();
         
-        // Carrega dados e incrementa o voto
-        const nominationsData = getLocalNominations();
+        // Simplesmente incrementa o voto
         nominationsData[movieId] = (nominationsData[movieId] || 0) + 1;
         
-        // Salva e recarrega a lista
         saveLocalNominations(nominationsData);
-        alert(`Voto registrado no filme ID ${movieId}!`);
         
-        // Recarrega os dados para atualizar a tela
-        loadData(); 
+        // Recarrega os dados para atualizar a lista
+        loadData();
+        
+        alert(`Seu voto foi registrado! Total de votos: ${nominationsData[movieId]}`);
     };
-
+    
     // Função principal para carregar os dados
     const loadData = async () => {
         try {
@@ -122,18 +114,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
     
-    // --- Lógica de Indicação de Novo Filme (Apenas simulação no localStorage) ---
-    nominationForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        // Esta funcionalidade não é necessária agora, mas mantemos o formulário para o futuro.
-        const title = document.getElementById('movieTitleInput').value.trim();
-        const director = document.getElementById('movieDirectorInput').value.trim();
-
-        alert(`Simulação: Filme "${title}" de ${director} indicado! (A funcionalidade de adicionar novo filme ao arquivo movies.json é manual)`);
-        
-        nominationForm.reset();
-    });
+    // --- Lógica de Indicação de Novo Filme (REMOVIDA) ---
+    // A remoção deste bloco evita o erro, pois a referência à 'nominationForm' não existe mais.
 
     // Inicia o carregamento
     loadData();
